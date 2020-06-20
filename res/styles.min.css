@@ -7,9 +7,17 @@
 	background-position: top center;
 }
 
+.bg-bg
+{
+	background-image: url("../img/bg_b.png");
+	background-repeat: no-repeat;
+	background-position: top center;
+	background-attachment: fixed;
+}
+
 @media screen and (min-width: 1600px)
 {
-	.bg-gradient{
+	.bg-gradient,.bg-bg{
 		-moz-background-size: 100%;
 	    -webkit-background-size: 100%; 
 	    -o-background-size: 100%;
@@ -154,4 +162,12 @@
 .text-op span
 {
 	color: #A761EA;
+}
+
+.img-rounded
+{
+	border-radius: 50rem;
+	overflow: hidden;
+	width: 300px;
+	height: 300px;
 }
