@@ -48,9 +48,9 @@
 			</div>
 			<div class="col-md-5 mt-2 text-center">
 				<div class="bordered-box-white px-0 py-1 roboto">
-					<a href="#about" class="">Обо мне</a>
-					<a href="#lessons" class="mx-4">Занятия</a>
-					<a href="#consulting" class="">Консультация</a>
+					<a href="#about" onclick="nvgjs.ScrollTo('#about');" class="">Обо мне</a>
+					<a href="#lessons" onclick="nvgjs.ScrollTo('#lessons');" class="mx-4">Занятия</a>
+					<a href="#consulting" onclick="nvgjs.ScrollTo('#consulting');" class="">Консультация</a>
 				</div>
 			</div>
 			<div class="col-md-4 text-right">
@@ -82,7 +82,7 @@
 <div class="container position-relative" style="min-height: 200px;">
 	<div class="row">
 		<div class="col-md-4">
-			<div class="shadow position-absolute card text-white bg-dark mb-3" style="top:-40px;max-width: 18rem;">
+			<div class="mx-auto shadow !position-absolute card text-white bg-dark mb-3" style="top:-53px;max-width: 18rem;">
 			  <div class="card-header">Формат 1</div>
 			  <div class="card-body">
 			    <h5 class="card-title">Занятия</h5>
@@ -91,7 +91,7 @@
 			</div>
 		</div>
 		<div class="col-md-4">
-			<div class="shadow position-absolute card text-white bg-dark mb-3" style="top:-40px;max-width: 18rem;">
+			<div class="mx-auto shadow !position-absolute card text-white bg-dark mb-3" style="top:-53px;max-width: 18rem;">
 			  <div class="card-header">Формат 2</div>
 			  <div class="card-body">
 			    <h5 class="card-title">Консультация</h5>
@@ -100,7 +100,7 @@
 			</div>
 		</div>
 		<div class="col-md-4">
-				<div class="shadow position-absolute card text-white bg-dark mb-3" style="top:-40px;max-width: 18rem;">
+				<div class="mx-auto shadow !position-absolute card text-white bg-dark mb-3" style="top:-53px;max-width: 18rem;">
 				  <div class="card-header">Формат 3</div>
 				  <div class="card-body">
 				    <h5 class="card-title">Помощь</h5>
@@ -164,12 +164,6 @@
 <script src="https://ex.nvg-group.com/libs/mdb/4.1.1/popper.js"></script>
 <script src="https://ex.nvg-group.com/libs/mdb/4.1.1/f.js"></script>
 <script src="https://ex.nvg-group.com/libs/nvg/7.6.9/f.min.js"></script>
-<script type="text/javascript">
-
-	nvgi.preLoad("topnav",0,1);
-
-
-</script>
 <script src="res/code.min.js?<?php echo $cache_vers; ?>"></script>
 </footer>
 </body>
