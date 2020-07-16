@@ -3,7 +3,7 @@
 /*Work with columns: wsite, !info!, value, !lang!, !timestamp!*/
 
 define('counter_ignore_ips', array('127.0.0.1', '127.0.0.2','console'));
-define("counter_ignore_agents",array('Yandex', 'Googlebot', 'Bingbot', 'Slurp', 'DuckDuckBot', 'Baiduspider', 'YandexBot', 'facebot', 'ia_archiver', 'bot','Bot','AhrefsBot','DotBot','MJ12bot','bingbot','msnbot','SeznamBot'));
+define("counter_ignore_agents",array('Yandex', 'Googlebot', 'Bingbot', 'Slurp', 'DuckDuckBot', 'Baiduspider', 'YandexBot', 'facebot', 'ia_archiver', 'bot','Bot','AhrefsBot','DotBot','MJ12bot','bingbot','msnbot','SeznamBot','vkShare','facebookexternalhit','TwitterBot'));
 define('blockOrgs', array("google","yandex","facebook","amazon","cloudsigma","vkontakte","mail.ru","datacamp","hetzner","microsoft","telegram","amazon.com","dataweb","digitalocean","oracle","seznam","ovh sas","reg.ru","host","azure"));
 
 
@@ -79,20 +79,11 @@ class nvgCount
 
 		if(!$ignore and $this->stricter)
 		{
-
-			//$url = 'https://ipapi.co/'.$counter_ip.'/org';
-			$url = 'http://ip-api.com/json/'.$counter_ip;
-			$curl = curl_init($url);
-		    curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-		    curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
-		    curl_setopt($curl, CURLOPT_TIMEOUT, 2);
-		    $res = curl_exec($curl);
-		    curl_close($curl);
+			$res = shell_exec("host ".$counter_ip);
 
 			for($i = 0; $i < count(blockOrgs); $i++)
 			{
-				//if(substr_count(strtolower($res),strtolower(blockOrgs[$i])))
-				if(substr_count(strtolower(json_decode($res,true)['org']),strtolower(blockOrgs[$i])))
+				if(substr_count(strtolower($res),strtolower(blockOrgs[$i])))
 				{
 					$ignore = true;
 					break;
@@ -219,18 +210,11 @@ class nvgData
 			}
 		}
 
-		//$url = 'https://ipapi.co/'.$myip.'/org';
-		$url = 'http://ip-api.com/json/'.$myip;
-		$curl = curl_init($url);
-	    curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-	    curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
-	    $res = curl_exec($curl);
-	    curl_close($curl);
+		$res = shell_exec("host ".$myip);
 
 		for($i = 0; $i < count(blockOrgs); $i++)
 		{
-			//if(substr_count(strtolower($res),strtolower(blockOrgs[$i])))
-			if(substr_count(strtolower(json_decode($res,true)['org']),strtolower(blockOrgs[$i])))
+			if(substr_count(strtolower($res),strtolower(blockOrgs[$i])))
 			{
 				$ignore = true;
 				break;
