@@ -4,7 +4,7 @@
 
 define('counter_ignore_ips', array('127.0.0.1', '127.0.0.2','console'));
 define("counter_ignore_agents",array('Yandex', 'Googlebot', 'Bingbot', 'Slurp', 'DuckDuckBot', 'Baiduspider', 'YandexBot', 'facebot', 'ia_archiver', 'bot','Bot','AhrefsBot','DotBot','MJ12bot','bingbot','msnbot','SeznamBot','vkShare','facebookexternalhit','TwitterBot'));
-define('blockOrgs', array("google","yandex","facebook","amazon","cloudsigma","vkontakte","mail.ru","datacamp","hetzner","microsoft","telegram","amazon.com","dataweb","digitalocean","oracle","seznam","ovh sas","reg.ru","host","azure"));
+define('blockOrgs', array("google","yandex","facebook","amazon","cloudsigma","vkontakte","mail.ru","datacamp","hetzner","microsoft","telegram","amazon.com","dataweb","digitalocean","oracle","seznam","ovh sas","reg.ru","azure"));
 
 
 
